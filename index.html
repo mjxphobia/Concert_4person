@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>염라 콘서트장</title>
+<style>
+  body {
+    margin: 0;
+    background: #000;
+    color: #fff;
+    font-family: 'Noto Sans KR', sans-serif;
+    text-align: center;
+  }
+
+img {
+  width: 100%;
+  max-width: 420px;       /* ✅ 최대 크기 제한 (원하면 350~500px로 조절 가능) */
+  height: auto;
+  border-radius: 12px;
+  display: block;
+  margin: 0 auto;
+  object-fit: contain;    /* ✅ 이미지 비율 유지 */
+}
+
+  .page {
+    display: none;
+    padding: 20px;
+  }
+  .active {
+    display: block;
+  }
+  .text {
+    max-width: 600px;
+    margin: 20px auto;
+    line-height: 1.6;
+  }
+  input[type="text"] {
+    padding: 10px 14px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: none;
+    width: 200px;
+    text-align: center;
+  }
+  button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 18px;
+    border-radius: 8px;
+    border: 1px solid #fff;
+    background: #111;
+    color: #fff;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.2s;
+  }
+  button:hover {
+    background: #333;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    justify-items: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+</style>
+</head>
+<body>
+
+<!-- 1️⃣ 첫 페이지 -->
+<section id="page1" class="page active">
+  <img src="static/people.jpg" alt="사람들">
+  <div class="text">
+    사람이 정말 많다. BLUEPINK 인기가 많은것같다.<br>
+    이정도면 우리 염라대왕님을 본 사람이 있을꺼야.<br>
+    물어보자. 이건 뭐지? 팬클럽 활동 규칙?<br>
+    하하 팬덤명이 웃긴데?
+  </div>
+  <form id="form1">
+    <input type="text" placeholder="팬덤명은?" id="ans1">
+    <button type="submit">확인</button>
+  </form>
+</section>
+
+<!-- 2️⃣ 두번째 페이지 (4명 선택화면) -->
+<section id="page2" class="page">
+  <div class="grid">
+    <img src="static/tired.jpg" id="goTired" alt="tired">
+    <img src="static/girl.jpg" id="goGirl" alt="girl">
+    <img src="static/paparazzi.jpg" id="goPaparazzi" alt="paparazzi">
+    <img src="static/chief.jpg" id="goChief" alt="chief">
+  </div>
+  <div class="text">이 사람들에게 물어보자.</div>
+</section>
+
+<!-- 3️⃣ tired 페이지 -->
+<section id="pageTired" class="page">
+  <img src="static/tired.jpg" alt="피곤한 사람">
+  <div class="text">이름을 읽을 수 있는 자와만 대화하는게 규칙이라고 했지..<br>그렇다면 이 사람의 이름은!</div>
+  <form id="formTired">
+    <input type="text" placeholder="ㅇㅇㅇ" id="ansTired">
+    <button type="submit">확인</button>
+  </form>
+</section>
+
+<section id="pageTiredAns" class="page">
+    <div class="text">인상 험악하고 앞니크고 한복 입은 사람 보셨나요??!</div>
+  <img src="static/tiredanswer.jpg" alt="정답">
+  <button class="backToMain">다른 사람과 대화하기</button>
+</section>
+
+<!-- 4️⃣ girl 페이지 -->
+<section id="pageGirl" class="page">
+  <img src="static/girl.jpg" alt="소녀">
+  <div class="text">이름을 읽을 수 있는 자와만 대화하는게 규칙이라고 했지..<br>그렇다면 이 사람의 이름은!</div>
+  <form id="formGirl">
+    <input type="text" placeholder="ㅇㅇㅇ" id="ansGirl">
+    <button type="submit">확인</button>
+  </form>
+</section>
+
+<section id="pageGirlAns" class="page">
+  <img src="static/girlanswer.jpg" alt="정답">
+  <button class="backToMain">다른 사람과 대화하기</button>
+</section>
+
+<!-- 5️⃣ paparazzi 페이지 -->
+<section id="pagePaparazzi" class="page">
+  <img src="static/paparazzi.jpg" alt="파파라치">
+  <div class="text">이름을 읽을 수 있는 자와만 대화하는게 규칙이라고 했지..<br>그렇다면 이 사람의 이름은!</div>
+  <form id="formPaparazzi">
+    <input type="text" placeholder="ㅇㅇㅇ" id="ansPaparazzi">
+    <button type="submit">확인</button>
+  </form>
+</section>
+
+<section id="pagePaparazziAns" class="page">
+  <img src="static/paparazzianswer.jpg" alt="정답">
+  <button class="backToMain">다른 사람과 대화하기</button>
+</section>
+
+<!-- 6️⃣ chief 페이지 -->
+<section id="pageChief" class="page">
+  <img src="static/chief.jpg" alt="리더">
+  div class="text">이름을 읽을 수 있는 자와만 대화하는게 규칙이라고 했지..<br>그렇다면 이 사람의 이름은!</div><
+  <form id="formChief">
+    <input type="text" placeholder="ㅇㅇㅇ" id="ansChief">
+    <button type="submit">확인</button>
+  </form>
+</section>
+
+<section id="pageChiefAns" class="page">
+  <img src="static/chiefanswer.jpg" alt="정답">
+  <button class="backToMain">다른 사람과 대화하기</button>
+</section>
+
+<script>
+/* 페이지 전환 함수 */
+function showPage(id){
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+
+/* 1️⃣ 팬덤명 입력 */
+document.getElementById('form1').addEventListener('submit', e=>{
+  e.preventDefault();
+  const v = document.getElementById('ans1').value.trim();
+  if(v.toLowerCase() === '뿌링클'){
+    showPage('page2');
+  }
+});
+
+/* 2️⃣ 각 이미지 클릭 시 해당 사람 페이지로 */
+document.getElementById('goTired').onclick = ()=> showPage('pageTired');
+document.getElementById('goGirl').onclick = ()=> showPage('pageGirl');
+document.getElementById('goPaparazzi').onclick = ()=> showPage('pagePaparazzi');
+document.getElementById('goChief').onclick = ()=> showPage('pageChief');
+
+/* 🔁 두번째페이지로 돌아가기 버튼 */
+document.querySelectorAll('.backToMain').forEach(btn=>{
+  btn.addEventListener('click', ()=> showPage('page2'));
+});
+document.getElementById('backPeople').onclick = ()=> showPage('page1');
+
+/* 3️⃣ 이름 정답 처리 */
+document.getElementById('formTired').addEventListener('submit', e=>{
+  e.preventDefault();
+  const v = document.getElementById('ansTired').value.trim();
+  if(v === '왕피곤') showPage('pageTiredAns');
+});
+
+document.getElementById('formGirl').addEventListener('submit', e=>{
+  e.preventDefault();
+  const v = document.getElementById('ansGirl').value.trim();
+  if(v === '안소녀') showPage('pageGirlAns'); // 예시 이름
+});
+
+document.getElementById('formPaparazzi').addEventListener('submit', e=>{
+  e.preventDefault();
+  const v = document.getElementById('ansPaparazzi').value.trim();
+  if(v === '꽃분장') showPage('pagePaparazziAns'); // 예시 이름
+});
+
+document.getElementById('formChief').addEventListener('submit', e=>{
+  e.preventDefault();
+  const v = document.getElementById('ansChief').value.trim();
+  if(v === '박사장') showPage('pageChiefAns'); // 예시 이름
+});
+</script>
+</body>
+</html>
