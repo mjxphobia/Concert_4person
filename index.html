@@ -14,13 +14,21 @@
   }
 
 img {
-  width: 100%;
+  width: 90%;
   max-width: 420px;       /* ✅ 최대 크기 제한 (원하면 350~500px로 조절 가능) */
   height: auto;
   border-radius: 12px;
   display: block;
   margin: 0 auto;
   object-fit: contain;    /* ✅ 이미지 비율 유지 */
+}
+
+/* 🎯 name.jpg 전용 크기 조절 */
+.name-img {
+  width: 150px;     /* 원하는 크기 직접 설정 */
+  max-width: 40%;   /* 모바일 대응 비율 (선택) */
+  display: block;
+  margin: 10px auto; /* 가운데 정렬 유지 */
 }
 
   .page {
@@ -108,6 +116,8 @@ img {
     이정도면 우리 염라대왕님을 본 사람이 있을꺼야.<br>
     물어보자. 이건 뭐지? 팬클럽 활동 규칙?<br>
     하하 팬덤명이 웃긴데?
+    <img src="static/name.jpg" alt="name" class="name-img">
+    *본 이미지는 확대가 가능합니다.
   </div>
   <form id="form1">
     <input type="text" placeholder="팬덤명은?" id="ans1">
@@ -141,8 +151,8 @@ img {
 
 <!-- 3️⃣ tired 페이지 -->
 <section id="pageTired" class="page">
-  <img src="static/tired.png" alt="피곤한 사람">
-  <div class="text">이름을 읽을 수 있는 자와만 대화하는게 규칙이라고 했지..<br>그렇다면 이 사람의 이름은!</div>
+  <img src="static/tired.png" alt="피곤한 사람" >
+  <div class="text">닉네임을 부르고 대화하는게 규칙이라고 했지?<br>그렇다면 이 사람의 이름은..</div>
   <form id="formTired">
     <input type="text" placeholder="ㅇㅇㅇ" id="ansTired">
     <button type="submit">확인</button>
