@@ -130,19 +130,19 @@ img {
   <div class="grid">
     <div class="person">
       <img src="static/tired.png" alt="tired">
-      <button class="talk-btn" id="goTired">대화하기</button>
+      <button class="talk-btn" id="goTiredAns">대화하기</button>
     </div>
     <div class="person">
       <img src="static/girl.png" alt="girl">
-      <button class="talk-btn" id="goGirl">대화하기</button>
+      <button class="talk-btn" id="goGirlAns">대화하기</button>
     </div>
     <div class="person">
       <img src="static/paparazzi.png" alt="paparazzi">
-      <button class="talk-btn" id="goPaparazzi">대화하기</button>
+      <button class="talk-btn" id="goPaparazziAns">대화하기</button>
     </div>
     <div class="person">
       <img src="static/chief.png" alt="chief">
-      <button class="talk-btn" id="goChief">대화하기</button>
+      <button class="talk-btn" id="goChiefAns">대화하기</button>
     </div>
   </div>
   <button id="backPeople">뒤로가기</button>
@@ -150,15 +150,6 @@ img {
 
 
 <!-- 3️⃣ tired 페이지 -->
-<section id="pageTired" class="page">
-  <img src="static/tired.png" alt="피곤한 사람" >
-  <div class="text">닉네임을 부르고 대화하는게 규칙이라고 했지?<br>그렇다면 이 사람의 이름은..</div>
-  <form id="formTired">
-    <input type="text" placeholder="ㅇㅇㅇ" id="ansTired">
-    <button type="submit">확인</button>
-    <br><button class="backToMain">다른 사람과 대화하기</button>
-  </form>
-</section>
 
 <section id="pageTiredAns" class="page">
     <div class="text">인상 험악하고 앞니크고 한복 입은 사람 보셨나요??!</div>
@@ -167,16 +158,6 @@ img {
 </section>
 
 <!-- 4️⃣ girl 페이지 -->
-<section id="pageGirl" class="page">
-  <img src="static/girl.png" alt="소녀">
-  <div class="text">이름을 읽을 수 있는 자와만 대화하는게 규칙이라고 했지..<br>그렇다면 이 사람의 이름은!</div>
-  <form id="formGirl">
-    <input type="text" placeholder="ㅇㅇㅇ" id="ansGirl">
-    <button type="submit">확인</button>
-    <br><button class="backToMain">다른 사람과 대화하기</button>
-  </form>
-</section>
-
 <section id="pageGirlAns" class="page">
     <div class="text">뭐만하면 투덜되고 인상쓰는 사람 보셨나요??!</div>
   <img src="static/girlanswer.png" alt="정답">
@@ -184,16 +165,6 @@ img {
 </section>
 
 <!-- 5️⃣ paparazzi 페이지 -->
-<section id="pagePaparazzi" class="page">
-  <img src="static/paparazzi.png" alt="파파라치">
-  <div class="text">이름을 읽을 수 있는 자와만 대화하는게 규칙이라고 했지..<br>그렇다면 이 사람의 이름은!</div>
-  <form id="formPaparazzi">
-    <input type="text" placeholder="ㅇㅇㅇ" id="ansPaparazzi">
-    <button type="submit">확인</button>
-    <br><button class="backToMain">다른 사람과 대화하기</button>
-  </form>
-</section>
-
 <section id="pagePaparazziAns" class="page">
     <div class="text">눈썹이 짙고 입냄새나는 사람 보셨나요??!</div>
   <img src="static/paparazzianswer.png" alt="정답">
@@ -201,16 +172,6 @@ img {
 </section>
 
 <!-- 6️⃣ chief 페이지 -->
-<section id="pageChief" class="page">
-  <img src="static/chief.png" alt="리더">
-  <div class="text">이름을 읽을 수 있는 자와만 대화하는게 규칙이라고 했지..<br>그렇다면 이 사람의 이름은!</div>
-  <form id="formChief">
-    <input type="text" placeholder="ㅇㅇㅇ" id="ansChief">
-    <button type="submit">확인</button>
-    <br><button class="backToMain">다른 사람과 대화하기</button>
-  </form>
-</section>
-
 <section id="pageChiefAns" class="page">
     <div class="text">콧수염이 안어울리는 사람 보셨나요??!</div>
   <img src="static/chiefanswer.png" alt="정답">
@@ -223,6 +184,18 @@ function showPage(id){
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   document.getElementById(id).classList.add('active');
 }
+
+document.getElementById("goTiredAns").onclick = () => showPage("pageTiredAns");
+document.getElementById("goGirlAns").onclick = () => showPage("pageGirlAns");
+document.getElementById("goPaparazziAns").onclick = () => showPage("pagePaparazziAns");
+document.getElementById("goChiefAns").onclick = () => showPage("pageChiefAns");
+
+document.querySelectorAll(".backToMain").forEach(btn =>
+  btn.onclick = () => showPage("page2")
+);
+
+document.getElementById("backPeople").onclick = () => showPage("page1");
+
 
 /* 1️⃣ 팬덤명 입력 */
 document.getElementById('form1').addEventListener('submit', e=>{
